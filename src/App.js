@@ -1,15 +1,15 @@
 import './App.css';
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 //imrs
 import React, { useState } from 'react'
 import Alert from './components/Alert';
-import {
-  BrowserRouter as Router,
-  Routes as Switch,
-  Route,
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Routes as Switch,
+//   Route,
+// } from "react-router-dom";
 
 
 function App() {
@@ -38,11 +38,12 @@ function App() {
       }
   }
   return (
-    <Router>
+    <>
+    {/* <Router> */}
     <Navbar title="TextUtils"  aboutText="About TextUtils" mode={mode} toggleMode={toggleMode}/>
     <Alert alert={alert}/>
     <div className="container my">
-    <Switch>
+    {/* <Switch> */}
           {/*Old Syntax
            <Route path="/about">
             <About mode={mode}/>
@@ -50,11 +51,14 @@ function App() {
           <Route path="/">
             <TextForm heading="Enter below the text to analyze" mode={mode} showAlert={showAlert}/>
           </Route> */}
-          <Route exact path='/about' element={<About mode={mode}/>} />
-          <Route exact path='/' element={<TextForm heading="Enter below the text to analyze" mode={mode} showAlert={showAlert}/>} />
-    </Switch> 
+          {/* <Route exact path='/about' element={<About mode={mode}/>} />
+          <Route exact path='/' element={<TextForm heading="Enter below the text to analyze" mode={mode} showAlert={showAlert}/>} /> */}
+    {/* </Switch>  */}
+    <TextForm heading="Enter below the text to analyze" mode={mode} showAlert={showAlert}/>
+    {/* <About mode={mode}/> */}
     </div>
-    </Router> 
+    {/* </Router>  */}
+    </>
   );
 }
 
